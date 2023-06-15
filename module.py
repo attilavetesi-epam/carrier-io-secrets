@@ -82,8 +82,8 @@ class Module(module.ModuleModel):
             'galloper_url': c.APP_HOST,
             'redis_host': c.REDIS_HOST,
             'loki_host': c.EXTERNAL_LOKI_HOST.replace("https://", "http://"),
-            'influx_ip': c.APP_IP,
-            'rabbit_host': c.APP_IP,
+            'influx_ip': c.INFLUX_HOST,
+            'rabbit_host': c.RABBIT_HOST,
         }
         existing_secrets = vault_client.get_all_secrets()
         initial_secrets.update(existing_secrets)
